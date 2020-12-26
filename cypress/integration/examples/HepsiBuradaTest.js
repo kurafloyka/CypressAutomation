@@ -1,4 +1,3 @@
-/// <reference types="cypress"/>
 describe('Locating Elements', () => {
     it('Verify types of locators', () => {
 
@@ -25,6 +24,7 @@ describe('Locating Elements', () => {
         cy.wait(3000)
         //2 adet urun eklendigi gorulur
         cy.get('.product-unit-price').contains('$1,800.00')
+        
     })
 
 

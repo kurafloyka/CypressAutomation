@@ -1,0 +1,655 @@
+{
+  "stats": {
+    "suites": 8,
+    "tests": 14,
+    "passes": 6,
+    "pending": 0,
+    "failures": 6,
+    "start": "2020-12-26T14:03:53.580Z",
+    "end": "2020-12-26T14:05:11.096Z",
+    "duration": 52437,
+    "testsRegistered": 14,
+    "passPercent": 42.857142857142854,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "d6d6281c-05ac-46bb-a86c-c6d91caa38f0",
+      "title": "",
+      "fullFile": "cypress/integration/examples/Aliases.spec.js",
+      "file": "cypress/integration/examples/Aliases.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "82ed3932-7b47-4f0b-9d4a-76c9662ec1be",
+          "title": "Create and mark-unmark as favorite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a post",
+              "fullTitle": "Create and mark-unmark as favorite Create a post",
+              "timedOut": null,
+              "duration": 315,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('ul.navbar-nav').children().as('menu');\ncy.get('@menu').contains('New Post').click();\ncy.hash().should('include', '#/editor');\ncy.get('form').within(function ($form) {\n  cy.get('input').first().type('Test');\n  cy.get('input').eq(1).type('Test 1');\n  cy.get('textarea').last().type('Test 2');\n  cy.contains('Publish Article').click();\n});\ncy.url().should('include', 'article');",
+              "err": {
+                "message": "ReferenceError: baseUrl is not defined\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Create and mark-unmark as f...`",
+                "estack": "ReferenceError: baseUrl is not defined\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Create and mark-unmark as f...`\n    at Context.eval (https://react-redux.realworld.io/__cypress/tests?p=cypress/support/index.js:611:12)",
+                "diff": null
+              },
+              "uuid": "d2450c57-a634-403a-93e2-14340800e0f6",
+              "parentUUID": "82ed3932-7b47-4f0b-9d4a-76c9662ec1be",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d2450c57-a634-403a-93e2-14340800e0f6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 315,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "c9177246-82d0-48d2-b63e-39f7ccb0604a",
+      "title": "",
+      "fullFile": "cypress/integration/examples/BasicURLComment.js",
+      "file": "cypress/integration/examples/BasicURLComment.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4957cdce-0c84-43a8-b407-f12181b5aa90",
+          "title": "Basic URL Commands",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Checkout basic url commands",
+              "fullTitle": "Basic URL Commands Checkout basic url commands",
+              "timedOut": null,
+              "duration": 7063,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//go to URL\ncy.visit('https://react-redux.realworld.io/#/login'); //Sayfa title kontrol ediliyor....\ncy.title().should('eq', 'Conduit'); //Username ve password giriliyor ve Sign in butonuna tiklaniyor\ncy.get('input[placeholder=\"Email\"]').type('farukakyol3480@gmail.com');\ncy.get('input[placeholder=\"Password\"]').type('admin123');\ncy.get('button[type=\"Submit\"]').contains('Sign in').should('be.visible').click(); // sayfa url protocol https olmali kontrolu\ncy.location('protocol').should('eq', 'https:'); // bir element beklenen texti icerdiginin kontrolu\ncy.contains('Your Feed', {\n  timeout: 10000\n}).should('be.visible');\ncy.contains('Your Feed').should('be.visible'); //Gidilen url de #/ var mi kontrol edilir.\ncy.hash().should('include', '#/');\ncy.location('hash').should('include', '#/'); //cy.get('input[placeholder=\"Article Title\"]').type('Test')\ncy.url().should('include', '#/'); //cy.get('.nav-link').contains('Home Page').click()\n//sayfada ileri geri ve sayfayi yeniden yuklemek icin kullanilir\ncy.reload(); //cy.go('back')\n//cy.go('forward')\n//cy.go(-1)",
+              "err": {},
+              "uuid": "5a7bc1ea-e1a8-4402-99f3-f48301269fb9",
+              "parentUUID": "4957cdce-0c84-43a8-b407-f12181b5aa90",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5a7bc1ea-e1a8-4402-99f3-f48301269fb9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7063,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "d0e4a355-c0dd-4da3-ba78-e9591063207f",
+      "title": "",
+      "fullFile": "cypress/integration/examples/CustomCommand.js",
+      "file": "cypress/integration/examples/CustomCommand.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "680e4a5a-69d6-4f3b-b420-9ce89101eba4",
+          "title": "Create and mark-unmark as favorite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a post",
+              "fullTitle": "Create and mark-unmark as favorite Create a post",
+              "timedOut": null,
+              "duration": 298,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('ul.navbar-nav').children().contains('New Post').click();\ncy.hash().should('include', '#/editor');\ncy.get('form').within(function ($form) {\n  cy.get('input').first().type('Test');\n  cy.get('input').eq(1).type('Test 1');\n  cy.get('textarea').last().type('Test 2');\n  cy.contains('Publish Article').click();\n});\ncy.url().should('include', 'article');",
+              "err": {
+                "message": "ReferenceError: baseUrl is not defined\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Create and mark-unmark as f...`",
+                "estack": "ReferenceError: baseUrl is not defined\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Create and mark-unmark as f...`\n    at Context.eval (https://react-redux.realworld.io/__cypress/tests?p=cypress/support/index.js:611:12)",
+                "diff": null
+              },
+              "uuid": "3acbaa02-a8fb-4d0f-8f50-c077e98cc224",
+              "parentUUID": "680e4a5a-69d6-4f3b-b420-9ce89101eba4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mark-unmark as favorite",
+              "fullTitle": "Create and mark-unmark as favorite Mark-unmark as favorite",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('ul.navbar-nav').children().contains('QAMs').click();\ncy.contains('My Articles').should('be.visible');\ncy.get('.ion-heart').first().click();\ncy.contains('Favorited Articles').click();\ncy.url().should('include', 'favorites');\ncy.get('.ion-heart').first().click();\ncy.reload();\ncy.contains('No articles are here... yet.').should('be.visible');\ncy.go('back');",
+              "err": {},
+              "uuid": "4a5c0b65-dac9-4c9b-8467-03c96eab10cd",
+              "parentUUID": "680e4a5a-69d6-4f3b-b420-9ce89101eba4",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3acbaa02-a8fb-4d0f-8f50-c077e98cc224"
+          ],
+          "pending": [],
+          "skipped": [
+            "4a5c0b65-dac9-4c9b-8467-03c96eab10cd"
+          ],
+          "duration": 298,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "a9dcd63f-6cfa-4e1d-8429-cd8e6bc91a73",
+      "title": "",
+      "fullFile": "cypress/integration/examples/FirstTestCase.js",
+      "file": "cypress/integration/examples/FirstTestCase.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e3965d62-0b1f-4802-84e8-8ad271c174ec",
+          "title": "My Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Title Of Page",
+              "fullTitle": "My Test Suite Verify Title Of Page",
+              "timedOut": null,
+              "duration": 2240,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://demo.nopcommerce.com/');\ncy.title().should('eq', 'nopCommerce demo store');",
+              "err": {},
+              "uuid": "2622d6a1-404d-44f8-8189-a2de6a4cb9f4",
+              "parentUUID": "e3965d62-0b1f-4802-84e8-8ad271c174ec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Not Verify Title Of Page",
+              "fullTitle": "My Test Suite Not Verify Title Of Page",
+              "timedOut": null,
+              "duration": 5791,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://demo.nopcommerce.com/');\ncy.title().should('eq', 'nopCommerce demo stores');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'nopCommerce demo store' to equal 'nopCommerce demo stores'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'nopCommerce demo store' to equal 'nopCommerce demo stores'\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/integration/examples/FirstTestCase.js:106:16)",
+                "diff": "- 'nopCommerce demo store'\n+ 'nopCommerce demo stores'\n"
+              },
+              "uuid": "acd476d4-0a1b-4909-a48d-7a707f568992",
+              "parentUUID": "e3965d62-0b1f-4802-84e8-8ad271c174ec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Not Verify Title Of Page",
+              "fullTitle": "My Test Suite Not Verify Title Of Page",
+              "timedOut": null,
+              "duration": 5900,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://demo.nopcommerce.com/');\ncy.title().should('eq', 'nopCommerce demo stores');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'nopCommerce demo store' to equal 'nopCommerce demo stores'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'nopCommerce demo store' to equal 'nopCommerce demo stores'\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/integration/examples/FirstTestCase.js:110:16)",
+                "diff": "- 'nopCommerce demo store'\n+ 'nopCommerce demo stores'\n"
+              },
+              "uuid": "4672af79-9c3d-4181-acfa-d67052a59f07",
+              "parentUUID": "e3965d62-0b1f-4802-84e8-8ad271c174ec",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2622d6a1-404d-44f8-8189-a2de6a4cb9f4"
+          ],
+          "failures": [
+            "acd476d4-0a1b-4909-a48d-7a707f568992",
+            "4672af79-9c3d-4181-acfa-d67052a59f07"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 13931,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "35c0c7ca-9cf3-44ed-8540-1ce3a6e9a77c",
+      "title": "",
+      "fullFile": "cypress/integration/examples/HepsiBuradaTest.js",
+      "file": "cypress/integration/examples/HepsiBuradaTest.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f1472a88-f0b4-4764-ad5a-451ebfc573e4",
+          "title": "Locating Elements",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify types of locators",
+              "fullTitle": "Locating Elements Verify types of locators",
+              "timedOut": null,
+              "duration": 20526,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Opens URL\ncy.visit('https://demo.nopcommerce.com/'); //SearchBox \ncy.get('#small-searchterms').type('Apple MacBook Pro 13-inch'); //Click On Search Button\ncy.get('[value=\"Search\"]').click(); //Sepete ekle butonuna tiklanir\ncy.get('.button-2[value=\"Add to cart\"]').click(); //Urun miktari guncellenir\ncy.get('[name=\"addtocart_4.EnteredQuantity\"]').clear().type('2'); //Yeni urun miktari sepete eklenir\ncy.get('.button-1[data-productid=\"4\"]').click();\ncy.wait(5000); //Sepete gidilir\ncy.get('#topcartlink > a > span.cart-label').click();\ncy.wait(3000); //2 adet urun eklendigi gorulur\ncy.get('.product-unit-price').contains('$1,800.00');",
+              "err": {},
+              "uuid": "d9708b0d-36c6-4d19-b293-61f0521f4913",
+              "parentUUID": "f1472a88-f0b4-4764-ad5a-451ebfc573e4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d9708b0d-36c6-4d19-b293-61f0521f4913"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 20526,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "afa584e8-f0c8-4e1b-9034-2be73a81969b",
+      "title": "",
+      "fullFile": "cypress/integration/examples/IdentifyElements.spec.js",
+      "file": "cypress/integration/examples/IdentifyElements.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3ad27453-ff96-43e5-b5c9-7b67fadf38fd",
+          "title": "Create and mark-unmark as favorite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sign in",
+              "fullTitle": "Create and mark-unmark as favorite Sign in",
+              "timedOut": null,
+              "duration": 2921,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://react-redux.realworld.io/#/login');\ncy.title().should('eq', 'Conduit');\ncy.location('protocol').should('eq', 'https:');\ncy.get('form').within(function ($form) {\n  // cy.get() will only search for elements within form, not within the entire document\n  cy.get('input[type = \"email\"]').type('farukakyol3480@gmail.com');\n  cy.get('input[type = \"password\"]').type('admin123');\n  cy.root().submit(); // submits the form yielded from 'within'\n});\ncy.contains('Your Feed', {\n  timeout: 10000\n}).should('be.visible');",
+              "err": {},
+              "uuid": "b94828bd-0e8a-461a-bcd1-60f682e4c5cc",
+              "parentUUID": "3ad27453-ff96-43e5-b5c9-7b67fadf38fd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create a post",
+              "fullTitle": "Create and mark-unmark as favorite Create a post",
+              "timedOut": null,
+              "duration": 1932,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('ul.navbar-nav').children().contains('New Post').click();\ncy.hash().should('include', '#/editor');\ncy.get('form').within(function ($form) {\n  cy.get('input').first().type('Test');\n  cy.get('input').eq(1).type('Test 1');\n  cy.get('textarea').last().type('Test 2');\n  cy.contains('Publish Article').click();\n});\ncy.url().should('include', 'article');",
+              "err": {},
+              "uuid": "6cf88350-9bec-4f16-b65e-75a72610ce26",
+              "parentUUID": "3ad27453-ff96-43e5-b5c9-7b67fadf38fd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mark-unmark as favorite",
+              "fullTitle": "Create and mark-unmark as favorite Mark-unmark as favorite",
+              "timedOut": null,
+              "duration": 4280,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('ul.navbar-nav').children().contains('QAMs').click();\ncy.contains('My Articles').should('be.visible');\ncy.get('.ion-heart').first().click();\ncy.contains('Favorited Articles').click();\ncy.url().should('include', 'favorites');\ncy.get('.ion-heart').first().click();\ncy.reload();\ncy.contains('No articles are here... yet.').should('be.visible');\ncy.go('back');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'QAMs' within the element: [ <li.nav-item>, 3 more... ] but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'QAMs' within the element: [ <li.nav-item>, 3 more... ] but never did.\n    at Context.eval (https://react-redux.realworld.io/__cypress/tests?p=cypress/integration/examples/IdentifyElements.spec.js:128:40)",
+                "diff": null
+              },
+              "uuid": "ab1a3c1b-dfbe-4da4-8d64-8ed5d96b3b5f",
+              "parentUUID": "3ad27453-ff96-43e5-b5c9-7b67fadf38fd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b94828bd-0e8a-461a-bcd1-60f682e4c5cc",
+            "6cf88350-9bec-4f16-b65e-75a72610ce26"
+          ],
+          "failures": [
+            "ab1a3c1b-dfbe-4da4-8d64-8ed5d96b3b5f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9133,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "add9cad3-2cd0-450d-beb9-a28adfe1858d",
+      "title": "",
+      "fullFile": "cypress/integration/examples/Plugin_uploadFiles.spec.js",
+      "file": "cypress/integration/examples/Plugin_uploadFiles.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a9a70c1c-cc7f-4aec-9c50-d23d8655f635",
+          "title": "Working with plugins",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "File upload",
+              "fullTitle": "Working with plugins File upload",
+              "timedOut": null,
+              "duration": 856,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://cgi-lib.berkeley.edu/ex/fup.html'); // upload file\nvar fileName = 'SampleFile.pdf';\n/* For cypress-file-upload version < 4.0.0\ncy.fixture(fileName).then(fileContent => {\n    cy.get('[type=\"file\"]').upload({ fileContent, fileName, mimeType: 'application/pdf' });\n})*/\n// For cypress-file-upload version > 4.0.0\ncy.get('[type=\"file\"]').attachFile(fileName);\ncy.get('[type=\"submit\"]').click();\ncy.contains(\"You've uploaded a file. Your notes on the file were:\");",
+              "err": {},
+              "uuid": "1fb218a2-bf27-4516-aa11-c59b82fab31f",
+              "parentUUID": "a9a70c1c-cc7f-4aec-9c50-d23d8655f635",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1fb218a2-bf27-4516-aa11-c59b82fab31f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 856,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "6c224185-57eb-464a-8f41-465c07d1f02c",
+      "title": "",
+      "fullFile": "cypress/integration/examples/ThenCommand.js",
+      "file": "cypress/integration/examples/ThenCommand.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "69232b09-732d-49c3-a341-7267c744dfdf",
+          "title": "Create and mark-unmark as favorite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a post",
+              "fullTitle": "Create and mark-unmark as favorite Create a post",
+              "timedOut": null,
+              "duration": 315,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('ul.navbar-nav').children().contains('New Post').click();\ncy.hash().should('include', '#/editor');\ncy.get('form').within(function ($form) {\n  cy.get('input').first().type('Test');\n  cy.get('input').eq(1).type('Test 1');\n  cy.get('textarea').last().type('Test 2');\n  cy.contains('Publish Article').click();\n});\ncy.url().should('include', 'article');",
+              "err": {
+                "message": "ReferenceError: baseUrl is not defined\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Create and mark-unmark as f...`",
+                "estack": "ReferenceError: baseUrl is not defined\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Create and mark-unmark as f...`\n    at Context.eval (https://react-redux.realworld.io/__cypress/tests?p=cypress/support/index.js:611:12)",
+                "diff": null
+              },
+              "uuid": "b8b1540d-f106-476b-85f0-66432a7d78fc",
+              "parentUUID": "69232b09-732d-49c3-a341-7267c744dfdf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mark-unmark as favorite",
+              "fullTitle": "Create and mark-unmark as favorite Mark-unmark as favorite",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('ul.navbar-nav').children().contains('QAMs').click();\ncy.contains('My Articles').should('be.visible');\ncy.get('.ion-heart').first().click();\ncy.contains('Favorited Articles').click();\ncy.url().should('include', 'favorites');\ncy.get('.btn-primary').first().then(function ($fav) {\n  var favCount = $fav.text();\n  expect(parseInt(favCount)).to.eq(1);\n}).click();\ncy.reload();\ncy.contains('No articles are here... yet.').should('be.visible');\ncy.go('back');",
+              "err": {},
+              "uuid": "790228f2-cbcd-4ddf-af9e-152b253f1f7c",
+              "parentUUID": "69232b09-732d-49c3-a341-7267c744dfdf",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "b8b1540d-f106-476b-85f0-66432a7d78fc"
+          ],
+          "pending": [],
+          "skipped": [
+            "790228f2-cbcd-4ddf-af9e-152b253f1f7c"
+          ],
+          "duration": 315,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

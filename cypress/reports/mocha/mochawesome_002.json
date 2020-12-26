@@ -1,0 +1,131 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-12-26T14:04:06.023Z",
+    "end": "2020-12-26T14:04:06.377Z",
+    "duration": 354,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "d0e4a355-c0dd-4da3-ba78-e9591063207f",
+      "title": "",
+      "fullFile": "cypress/integration/examples/CustomCommand.js",
+      "file": "cypress/integration/examples/CustomCommand.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "680e4a5a-69d6-4f3b-b420-9ce89101eba4",
+          "title": "Create and mark-unmark as favorite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a post",
+              "fullTitle": "Create and mark-unmark as favorite Create a post",
+              "timedOut": null,
+              "duration": 298,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('ul.navbar-nav').children().contains('New Post').click();\ncy.hash().should('include', '#/editor');\ncy.get('form').within(function ($form) {\n  cy.get('input').first().type('Test');\n  cy.get('input').eq(1).type('Test 1');\n  cy.get('textarea').last().type('Test 2');\n  cy.contains('Publish Article').click();\n});\ncy.url().should('include', 'article');",
+              "err": {
+                "message": "ReferenceError: baseUrl is not defined\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Create and mark-unmark as f...`",
+                "estack": "ReferenceError: baseUrl is not defined\n\nBecause this error occurred during a `before all` hook we are skipping the remaining tests in the current suite: `Create and mark-unmark as f...`\n    at Context.eval (https://react-redux.realworld.io/__cypress/tests?p=cypress/support/index.js:611:12)",
+                "diff": null
+              },
+              "uuid": "3acbaa02-a8fb-4d0f-8f50-c077e98cc224",
+              "parentUUID": "680e4a5a-69d6-4f3b-b420-9ce89101eba4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mark-unmark as favorite",
+              "fullTitle": "Create and mark-unmark as favorite Mark-unmark as favorite",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('ul.navbar-nav').children().contains('QAMs').click();\ncy.contains('My Articles').should('be.visible');\ncy.get('.ion-heart').first().click();\ncy.contains('Favorited Articles').click();\ncy.url().should('include', 'favorites');\ncy.get('.ion-heart').first().click();\ncy.reload();\ncy.contains('No articles are here... yet.').should('be.visible');\ncy.go('back');",
+              "err": {},
+              "uuid": "4a5c0b65-dac9-4c9b-8467-03c96eab10cd",
+              "parentUUID": "680e4a5a-69d6-4f3b-b420-9ce89101eba4",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3acbaa02-a8fb-4d0f-8f50-c077e98cc224"
+          ],
+          "pending": [],
+          "skipped": [
+            "4a5c0b65-dac9-4c9b-8467-03c96eab10cd"
+          ],
+          "duration": 298,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2020-12-26T14:04:08.340Z",
+    "end": "2020-12-26T14:04:23.583Z",
+    "duration": 15243,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a9dcd63f-6cfa-4e1d-8429-cd8e6bc91a73",
+      "title": "",
+      "fullFile": "cypress/integration/examples/FirstTestCase.js",
+      "file": "cypress/integration/examples/FirstTestCase.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e3965d62-0b1f-4802-84e8-8ad271c174ec",
+          "title": "My Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Title Of Page",
+              "fullTitle": "My Test Suite Verify Title Of Page",
+              "timedOut": null,
+              "duration": 2240,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://demo.nopcommerce.com/');\ncy.title().should('eq', 'nopCommerce demo store');",
+              "err": {},
+              "uuid": "2622d6a1-404d-44f8-8189-a2de6a4cb9f4",
+              "parentUUID": "e3965d62-0b1f-4802-84e8-8ad271c174ec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Not Verify Title Of Page",
+              "fullTitle": "My Test Suite Not Verify Title Of Page",
+              "timedOut": null,
+              "duration": 5791,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://demo.nopcommerce.com/');\ncy.title().should('eq', 'nopCommerce demo stores');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'nopCommerce demo store' to equal 'nopCommerce demo stores'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'nopCommerce demo store' to equal 'nopCommerce demo stores'\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/integration/examples/FirstTestCase.js:106:16)",
+                "diff": "- 'nopCommerce demo store'\n+ 'nopCommerce demo stores'\n"
+              },
+              "uuid": "acd476d4-0a1b-4909-a48d-7a707f568992",
+              "parentUUID": "e3965d62-0b1f-4802-84e8-8ad271c174ec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Not Verify Title Of Page",
+              "fullTitle": "My Test Suite Not Verify Title Of Page",
+              "timedOut": null,
+              "duration": 5900,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://demo.nopcommerce.com/');\ncy.title().should('eq', 'nopCommerce demo stores');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'nopCommerce demo store' to equal 'nopCommerce demo stores'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'nopCommerce demo store' to equal 'nopCommerce demo stores'\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/integration/examples/FirstTestCase.js:110:16)",
+                "diff": "- 'nopCommerce demo store'\n+ 'nopCommerce demo stores'\n"
+              },
+              "uuid": "4672af79-9c3d-4181-acfa-d67052a59f07",
+              "parentUUID": "e3965d62-0b1f-4802-84e8-8ad271c174ec",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2622d6a1-404d-44f8-8189-a2de6a4cb9f4"
+          ],
+          "failures": [
+            "acd476d4-0a1b-4909-a48d-7a707f568992",
+            "4672af79-9c3d-4181-acfa-d67052a59f07"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 13931,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
