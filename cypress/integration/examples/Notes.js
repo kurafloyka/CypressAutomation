@@ -7,3 +7,4 @@
 // plugins for file upload
 // video icin plugins
 // report icin mochaawesome reporter  kullanildi
+// write and read files and POM ile test yapisi kuruldu
