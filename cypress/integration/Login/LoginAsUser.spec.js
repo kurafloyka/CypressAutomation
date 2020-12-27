@@ -7,15 +7,23 @@ Given('I navigate to the website', () => {
 })
 
 
-When('I click on User Login Button', () => { 
+When('I click on User Login Button', (datatable) => { 
 
 
-    cy.get('form').within(($form) => {
-        // cy.get() will only search for elements within form, not within the entire document
-        cy.get('input[type = "email"]').type('farukakyol3480@gmail.com')
-        cy.get('input[type = "password"]').type('admin123')
-        cy.root().submit()   // submits the form yielded from 'within'
-    })
+    datatable.hashes().forEach(element =>{
+
+
+        //cy.get('form').within(($form) => {
+            // cy.get() will only search for elements within form, not within the entire document
+            cy.get('input[type = "email"]').type(element.username)
+            cy.get('input[type = "password"]').type(element.password)
+            cy.get('button[type="Submit"]').contains('Sign in').should('be.visible').click()
+       // })
+
+    });
+
+
+    
 
     
 })

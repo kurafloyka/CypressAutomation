@@ -8,3 +8,8 @@
 // video icin plugins
 // report icin mochaawesome reporter  kullanildi
 // write and read files and POM ile test yapisi kuruldu
+
+
+// cucumber tags execute background scenario, datatables,before,beforeeach after each after 
+//hook, POM
+// gitignore, read.me
