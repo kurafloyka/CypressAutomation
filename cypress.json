@@ -12,10 +12,8 @@
             "html": false,
             "json": true
         }
-    },
-
-
+    }
     
-        "testFiles": "**/*.feature"
+  
       
 }
